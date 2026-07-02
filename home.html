@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Liliws Roblox Profile 💖</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#ff9ed1,#ffd6ea,#fff0f7);
+    color:rgb(216, 132, 200);
+}
+
+/* ===== LOVE FALL ===== */
+.heart{
+    position:fixed;
+    top:-20px;
+    color:#ff4d94;
+    animation:fall linear forwards;
+    pointer-events:none;
+    z-index:999;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ===== HERO ===== */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    padding:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:25px;
+    width:420px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+    animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.avatar{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:4px solid white;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:32px;
+    margin-bottom:5px;
+}
+
+.username{
+    opacity:0.8;
+    margin-bottom:15px;
+}
+
+.btn{
+    padding:12px 25px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-weight:bold;
+    margin:5px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+.btn-pink{
+    background:#ff3f8f;
+    color:white;
+}
+
+.btn-white{
+    background:white;
+    color:#ff3f8f;
+}
+
+/* ===== SECTION ===== */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.title{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+/* ===== NEXT PART NOTE ===== */
+/* CSS & HTML lanjut di Part 2 */
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="card">
+
+<img src="https://cdn.phototourl.com/free/2026-07-02-6dd707b2-ec6d-47a4-90f5-4330b4a0c362.png" class="avatar">
+
+<h1>linlin 💖</h1>
+<div class="username">@liliws122</div>
+
+<p style="margin-bottom:15px;">
+Welcome to your Roblox profile ✨
+</p>
+
+<button class="btn btn-pink" onclick="scrollToNext()">
+Lihat Profil 💖
+</button>
+
+<button class="btn btn-white" onclick="alert('nohhh di pencetnya')">
+Secret 💌
+</button>
+
+</div>
+
+</section>
+
+<!-- LOVE CONTAINER -->
+<div id="love-container"></div>
+
+
+<!-- ABOUT -->
+<section class="about">
+<div class="glass">
+<h2 class="title">About linlin 💖</h2>
+<p>
+Haii! Ini adalah profile Roblox khusus untuk linlin ✨<br>
+Website ini dibuat sebagai hadiah kecil yang lucu 💕
+</p>
+</div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+<h2 class="title">Roblox Stats 🎮</h2>
+
+<div class="glass">
+
+<div class="stats-grid">
+
+<div class="stat-box">
+<h3>Friends</h3>
+<p>28</p>
+</div>
+
+<div class="stat-box">
+<h3>Followers</h3>
+<p>1</p>
+</div>
+
+<div class="stat-box">
+<h3>Following</h3>
+<p>0</p>
+</div>
+
+<div class="stat-box">
+<h3>Level</h3>
+<p>idk</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- GAMES -->
+<section class="games">
+<h2 class="title">Favorite Games 🎮</h2>
+
+<div class="glass">
+
+<div class="game-grid">
+
+<div class="game">Zepeto Girl Outfits 🛍️</div>
+<div class="game">Banjarmasin HANGOUT</div>
+<div class="game">Banjarbaru HANGOUT</div>
+<div class="game">Night Society</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<section style="padding:50px 20px; text-align:center;">
+    <div class="glass">
+        <h2>💖 Special For linlin</h2>
+        <p>Made with gweh ✨ by gweh</p>
+    </div>
+</section>
+
+<script>
+
+// ===== SCROLL TO NEXT SECTION =====
+function scrollToNext(){
+    document.querySelector('.about').scrollIntoView({
+        behavior:'smooth'
+    });
+}
+
+// ===== LOVE FALL =====
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (14 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },7000);
+}
+
+setInterval(createHeart,200);
+
+// ===== AUTO SCROLL ANIMATION (optional feel) =====
+window.addEventListener("load",()=>{
+    console.log("Website Liliws loaded 💖");
+});
+
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>linlin Roblox Profile 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== GLOBAL ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#ff9ed1,#ffd6ea,#fff0f7);
+    color:white;
+}
+
+/* ===== LOVE ===== */
+.heart{
+    position:fixed;
+    top:-20px;
+    color:#ff4d94;
+    animation:fall linear forwards;
+    pointer-events:none;
+    z-index:999;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-50px);opacity:1;}
+    100%{transform:translateY(110vh);opacity:0;}
+}
+
+/* ===== HERO ===== */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.card{
+    background:rgba(255, 255, 255, 0.15);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:25px;
+    width:420px;
+}
+
+.avatar{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    margin-bottom:10px;
+}
+
+.btn{
+    padding:12px 25px;
+    border:none;
+    border-radius:50px;
+    margin:5px;
+    cursor:pointer;
+}
+
+.btn-pink{background:#ff3f8f;color:white;}
+.btn-white{background:white;color:#ff3f8f;}
+
+/* ===== SECTIONS ===== */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.glass{
+    background:rgba(233, 0, 0, 0.15);
+    backdrop-filter:blur(15px);
+    padding:30px;
+    border-radius:20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.stats-grid,.game-grid,.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;
+    margin-top:20px;
+}
+
+.stat-box,.game{
+    background:rgba(254, 31, 31, 0.2);
+    padding:15px;
+    border-radius:15px;
+}
+
+.gallery-grid img{
+    width:100%;
+    border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+</body>
+</html>

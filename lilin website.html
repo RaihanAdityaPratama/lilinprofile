@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Liliws </title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff8fc4,#ffd3e6,#fff5fa);
+}
+
+.container{
+    position:relative;
+    z-index:10;
+    width:420px;
+    text-align:center;
+    background:rgba(255,255,255,.2);
+    backdrop-filter:blur(12px);
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 35px rgba(0,0,0,.15);
+}
+
+h1{
+    color:#fff;
+    margin-bottom:20px;
+    font-size:38px;
+}
+
+.gif{
+    width:220px;
+    height:auto;
+    display:block;
+    margin:0 auto 20px;
+    border-radius:20px;
+}
+
+p{
+    color:#fff;
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:50px;
+    font-size:17px;
+    cursor:pointer;
+    margin:8px;
+    transition:.3s;
+    font-weight:600;
+}
+
+#yes{
+    background:#ff3b89;
+    color:white;
+}
+
+#yes:hover{
+    transform:scale(1.08);
+}
+
+#no{
+    background:white;
+    color:#ff3b89;
+}
+
+#message{
+    display:none;
+    color:white;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+.heart{
+    position:absolute;
+    top:-30px;
+    color:#ff4d94;
+    animation:fall linear forwards;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:1;
+    }
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Haii Liliws </h1>
+
+<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTdzMTdmZ2Z0MjIyYzhzeWxoM2FybGIzazMxb2Vhb3R5ajVmczgweiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Aa9MaA1FrCLv4wGjGZ/giphy.gif" alt="GIF" class="gif">
+
+<p>Aku punya sesuatu yang ingin aku tunjukkan buat kamu...</p>
+
+<button id="yes">Lanjutkan </button>
+<button id="no">Gamau Lanjutkan 🙄</button>
+
+<div id="message">
+Yahh ketahuan 😝<br>
+Sekarang klik <b>Lanjutkan </b> yaa.<br>
+Kada Boleh Nolak Soalnya <b>
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("yes").onclick=function(){
+    window.location.href="home.html";
+}
+
+let klik=0;
+const no=document.getElementById("no");
+const pesan=document.getElementById("message");
+
+no.addEventListener("click",function(){
+
+    klik++;
+
+    if(klik==1){
+        no.style.transform="scale(.7)";
+    }
+
+    else if(klik==2){
+        no.style.transform="scale(.4)";
+    }
+
+    else{
+        no.style.transform="scale(0)";
+        no.style.opacity="0";
+
+        setTimeout(function(){
+            no.style.display="none";
+            pesan.style.display="block";
+        },300);
+    }
+
+});
+
+function buatLove(){
+
+    const love=document.createElement("div");
+
+    love.className="heart";
+    love.innerHTML="❤";
+
+    love.style.left=Math.random()*100+"vw";
+    love.style.fontSize=(15+Math.random()*25)+"px";
+    love.style.animationDuration=(4+Math.random()*3)+"s";
+
+    document.body.appendChild(love);
+
+    setTimeout(function(){
+        love.remove();
+    },7000);
+
+}
+
+setInterval(buatLove,180);
+
+</script>
+
+</body>
+</html>
